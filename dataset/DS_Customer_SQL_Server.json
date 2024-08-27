@@ -1,0 +1,19 @@
+{
+	"name": "DS_Customer_SQL_Server",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS_Ques1_Folder"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "raw",
+			"table": "customer"
+		}
+	}
+}

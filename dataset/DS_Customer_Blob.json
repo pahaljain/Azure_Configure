@@ -1,0 +1,25 @@
+{
+	"name": "DS_Customer_Blob",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_blob_to_adf",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "DS_Ques1_Folder"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
