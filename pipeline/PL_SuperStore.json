@@ -48,7 +48,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Superstore",
+						"referenceName": "DS_Superstore_SQL",
 						"type": "DatasetReference"
 					}
 				]

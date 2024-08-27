@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "DS_Folder"
+			"name": "DS_Ques1_Folder"
 		},
 		"annotations": [],
 		"type": "DelimitedText",

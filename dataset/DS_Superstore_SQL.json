@@ -1,5 +1,5 @@
 {
-	"name": "DS_Superstore",
+	"name": "DS_Superstore_SQL",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_SQL",
