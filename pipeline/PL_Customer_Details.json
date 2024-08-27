@@ -4,7 +4,8 @@
 		"description": "Pipeline for Customer Details",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy Customer data to Sql",
+				"description": "Copy Customer data to Sql from Blob",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -52,13 +53,71 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DS_Customer1",
+						"referenceName": "DS_Customer_Blob",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Customer_Ouput1",
+						"referenceName": "DS_Customer_Sql",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy Orders data to Sql",
+				"description": "Copy data to Sql from Blob",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.xlsx",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_Orders_Blob1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Orders_Sql",
 						"type": "DatasetReference"
 					}
 				]

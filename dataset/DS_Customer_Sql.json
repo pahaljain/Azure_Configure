@@ -1,5 +1,5 @@
 {
-	"name": "DS_Customer_Blob",
+	"name": "DS_Customer_Sql",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_blob_to_adf",
@@ -13,7 +13,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "input"
+				"fileName": "Customer_Details_Output.csv",
+				"container": "output"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

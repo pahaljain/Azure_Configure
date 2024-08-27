@@ -1,5 +1,5 @@
 {
-	"name": "DS_Customer_Blob",
+	"name": "DS_Orders_Blob1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_blob_to_adf",
@@ -9,16 +9,14 @@
 			"name": "DS_Folder"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"container": "input"
 			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
