@@ -1,0 +1,9 @@
+{
+	"name": "Pahal",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c793d9de-d429-462c-9287-cbab613fa0bc",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}
